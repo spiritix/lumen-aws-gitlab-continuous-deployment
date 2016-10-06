@@ -1,0 +1,36 @@
+variables:
+  MYSQL_DATABASE: ...
+  MYSQL_ROOT_PASSWORD: ...
+
+stages:
+  - test
+  - deploy
+
+testing:
+  type: test
+  image: php:7.0
+  services:
+    - mysql:5.6
+  script:
+    - bash .gitlab-ci.sh > /dev/null
+    - php vendor/bin/phpunit --colors
+
+deploy_staging:
+  type: deploy
+  environment: staging
+  script:
+    - bash .gitlab-deploy.sh
+    - eb deploy staging
+  only:
+    - master
+  when: on_success
+
+deploy_production:
+  type: deploy
+  environment: production
+  script:
+    - bash .gitlab-deploy.sh
+    - eb deploy production
+  only:
+    - master
+  when: manual

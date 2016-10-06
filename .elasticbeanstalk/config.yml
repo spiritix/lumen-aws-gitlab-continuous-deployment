@@ -1,0 +1,11 @@
+branch-defaults:
+  master:
+    environment: staging
+    group_suffix: null
+global:
+  application_name: ....
+  default_ec2_keyname: aws-eb
+  default_platform: PHP 7.0
+  default_region: us-west-2
+  profile: eb-cli
+  sc: git

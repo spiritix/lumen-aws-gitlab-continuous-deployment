@@ -9,6 +9,3 @@ For now, feel free to use the provided files and adapt them to your requirements
 - In AWS IAM create a new user and assign the "AWSElasticBeanstalkFullAccess" policy (not quite secure)
 - In your GitLab project add two variables "AWS_ACCESS_KEY_ID" and "AWS_SECRET_ACCESS_KEY" with the values from the IAM user
 - Push some changes to the master branch of your project and enjoy the magic
-
-## Saved you a lot of PITA?
-[Buy me a beer](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4HN44FHCND85A)
